@@ -52,14 +52,14 @@ class TestUnixPath(unittest.TestCase):
         self.assertEqual("algorithms/unix", expect_result[0])
         self.assertEqual("test.py", expect_result[1])
 
-    # def test_simplify_path(self):
-    #     self.assertEqual("/", simplify_path_v1("/../"))
-    #     self.assertEqual("/home/foo", simplify_path_v1("/home//foo/"))
-    #     self.assertEqual("/", simplify_path_v2("/../"))
-    #     self.assertEqual("/home/foo", simplify_path_v2("/home//foo/"))
-    
     def test_simplify_path(self):
-        self.assertEqual("C:\\", simplify_path_v1("/../"))
-        self.assertEqual("C:\\home\\foo", simplify_path_v1("/home//foo/"))
+        self.assertEqual("/", simplify_path_v1("/../"))
+        self.assertEqual("/home/foo", simplify_path_v1("/home//foo/"))
         self.assertEqual("/", simplify_path_v2("/../"))
         self.assertEqual("/home/foo", simplify_path_v2("/home//foo/"))
+    
+    # def test_simplify_path(self):
+    #     self.assertEqual("C:\\", simplify_path_v1("/../"))
+    #     self.assertEqual("C:\\home\\foo", simplify_path_v1("/home//foo/"))
+    #     self.assertEqual("/", simplify_path_v2("/../"))
+    #     self.assertEqual("/home/foo", simplify_path_v2("/home//foo/"))
